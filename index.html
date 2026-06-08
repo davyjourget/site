@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davy Jourget, Photographe et vidéographe expérimenté</title>
-    <meta name="description" content="Découvrez les services de Davy Jourget. Spécialiste en photographie et vidéographie à Rochefort, Charente-Maritime (17).">
-    <style
+    <title>Davy Jourget, photographe</title>
+    <meta name="description" content="Découvrez les services de Davy Jourget. Spécialiste en photographie à Rochefort, Charente-Maritime (17).">
+    <style>
         :root {
-            --bg-color: #0f172a;
-            --text-color: #f8fafc;
-            --accent-color: #3b82f6;
+            /* Palette de gris très foncés et tons simples */
+            --bg-color: #121214;       /* Gris très foncé / Anthracite */
+            --container-bg: #1e1e22;   /* Gris foncé pour détacher légèrement le contenu */
+            --text-main: #ffffff;      /* Blanc pur pour le titre */
+            --text-muted: #e2e8f0;     /* Gris très clair pour le texte secondaire */
+            --text-dark: #94a3b8;      /* Gris intermédiaire pour les détails */
+            --border-color: #334155;   /* Gris pour les bordures */
         }
+        
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color);
+            color: var(--text-muted);
             margin: 0;
             display: flex;
             justify-content: center;
@@ -23,76 +32,100 @@
             text-align: center;
             padding: 20px;
         }
+
         .container {
-            max-width: 600px;
+            max-width: 650px;
             width: 100%;
+            background-color: var(--container-bg);
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
         }
+
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #fff;
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: var(--text-main);
+            font-weight: 700;
         }
+
         p {
-            font-size: 1.2rem;
-            color: #94a3b8;
+            font-size: 1.15rem;
+            color: var(--text-muted);
             line-height: 1.6;
+            margin-bottom: 30px;
         }
-        .video-container {
-            margin: 30px 0;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        video {
+
+        /* Conteneur pour la photo au format horizontal 3:2 */
+        .image-container {
             width: 100%;
+            aspect-ratio: 3 / 2; /* Force le rapport de forme 3:2 */
+            margin: 30px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #2d2d34; /* Fond d'attente gris */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Rempli l'espace sans déformer l'image */
             display: block;
         }
+
         .links {
             display: flex;
             flex-direction: column;
             gap: 15px;
             margin-top: 30px;
         }
+
+        /* Boutons uniquement dans les tons gris et blanc */
         .btn {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 12px;
+            background-color: var(--text-main); /* Bouton principal blanc */
+            color: var(--bg-color);             /* Texte foncé */
+            padding: 14px;
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
-            transition: transform 0.2s, background 0.2s;
+            font-size: 1rem;
+            transition: background-color 0.2s, transform 0.2s;
+            border: none;
+            cursor: pointer;
         }
+
         .btn:hover {
-            transform: translateY(-2px);
-            background-color: #2563eb;
+            background-color: var(--text-muted); /* Devient gris très clair au survol */
+            transform: translateY(-1px);
         }
+
         .btn-secondary {
             background-color: transparent;
-            border: 2px solid #475569;
-            color: #cbd5e1;
+            border: 2px solid var(--border-color);
+            color: var(--text-main); /* Texte blanc */
         }
+
         .btn-secondary:hover {
-            background-color: #1e293b;
+            background-color: rgba(255, 255, 255, 0.05); /* Léger voile blanc au survol */
+            border-color: var(--text-muted);
+            transform: translateY(-1px);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Davy Jourget</h1>
-        <p>Photographe basé à Rochefort, Charente-Maritime (17)</p>
+        <h1>Davy Jourget, photographe</h1>
+        <p>Photographe indépendant avec plus de 25 ans d'expérience, je suis disponible pour tous vos projets</p>
         
-        <!-- Intégration de votre vidéo Higgsfield -->
-        <div class="video-container">
-            <video autoplay loop muted playsinline>
-                <source src="votre-video.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la lecture de vidéos.
-            </video>
+        <div class="image-container">
+            <img src="ma-photo.jpeg" alt="Photographie de présentation de Davy Jourget, photographe à Rochefort, Charente-Maritime (17)">
         </div>
 
         <div class="links">
-            <a href="mailto:votre-email@exemple.com" class="btn">Me contacter par Email</a>
-            <a href="[Lien LinkedIn, Instagram ou autre]" class="btn btn-secondary" target="_blank">Suivez-moi sur les réseaux</a>
+            <a href="mailto:davyjourget@gmail.com" class="btn">Me contacter par Email</a>            
         </div>
     </div>
 
